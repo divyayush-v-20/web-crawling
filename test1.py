@@ -63,7 +63,10 @@ async def main():
     # target_url = "https://www.example.com"
     # target_url = "https://en.wikipedia.org/wiki/Web_scraping"
     # target_url = "https://www.crunchyroll.com/videos/alphabetical"
-    target_url = "https://www.aetv.com/shows"
+    # target_url = "https://www.aetv.com/shows"
+    # target_url = "https://www.crunchyroll.com/videos/alphabetical#L"
+    # target_url = "https://www.hotstar.com/in/home"
+    target_url = "https://www.powerapp.com.tr/yayin-akisi/powerturktv/"
 
     print(f"Attempting to scrape raw HTML from: {target_url}\n")
     raw_html_output = await scrape_html(target_url)
@@ -93,7 +96,7 @@ async def main():
     markdown_content = h.handle(raw_html_output)
 
     # Print the generated Markdown content
-    with open("aetv.md", "w") as f:
+    with open("results/powerapp.md", "w") as f:
         f.write(markdown_content)
 
 if __name__ == "__main__":
