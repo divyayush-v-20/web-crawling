@@ -5,7 +5,7 @@ import html2text
 async def scrape_html(url: str) -> str:
     async with async_playwright() as p:
         # Launch a Chromium browser instance
-        browser = await p.chromium.launch()
+        browser = await p.chromium.launch(headless=False, executable_path="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
         # Create a new page in the browser
         page = await browser.new_page()
 

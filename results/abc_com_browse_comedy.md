@@ -36,7 +36,6 @@ Log In
 ## Latest News & Updates
 ### Latest News & Updates
   * [Don't just stand around. Check out ABC's 2025 Fall Primetime TV Lineup!](https://abc.com/news/7a61bd9b-705b-4fca-b423-bd80ab93f2c0/category/1138628)
-  * [Watch the 2025 NBA Playoffs on ABC: See the Schedule](https://abc.com/news/20be7a52-652b-4a6b-b4d0-c67b0616e164/category/1138628)
   * [ABC's 2025 summer premiere dates are here. See what's headed your way!](https://abc.com/news/44029ecc-8c7c-4389-8461-c3dd9547994c/category/1138628)
   * [Watch a new season of "Project Runway" premiering Thursday, July 31 on Freeform. Stream on Hulu & Disney+.](https://www.freeform.com/news/834a9c7f-13ab-44e9-b4a8-873f73d5a3bd/category/3444024)
   * [Binge Season 1 of "High Potential" in its entirety. Start here with no sign-in needed!](https://abc.com/episode/874adc6e-3a64-4626-a847-eec363072950/playlist/PL553044961)
