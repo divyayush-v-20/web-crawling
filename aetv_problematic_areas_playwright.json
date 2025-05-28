@@ -1,0 +1,92 @@
+[
+    {
+        "url": "https://www.aetv.com/",
+        "xpath_affected": "/html/body/section/div[2]/div/div",
+        "description": "Pop-up/Modal (e.g., cookie consent) detected. May block interactions.",
+        "type": "Pop-up/Modal",
+        "manual_intervention_required_for": [
+            "Dismissing pop-up to access underlying content."
+        ]
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "xpath_affected": "/html/body/iframe",
+        "description": "Iframe detected (src: None). Content inside needs context switching and specific handling.",
+        "type": "Iframe Content",
+        "manual_intervention_required_for": [
+            "Interacting with embedded video players, social media feeds, etc."
+        ]
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "xpath_affected": "/html/body/iframe[2]",
+        "description": "Iframe detected (src: None). Content inside needs context switching and specific handling.",
+        "type": "Iframe Content",
+        "manual_intervention_required_for": [
+            "Interacting with embedded video players, social media feeds, etc."
+        ]
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "xpath_affected": "/html/body/iframe[3]",
+        "description": "Iframe detected (src: None). Content inside needs context switching and specific handling.",
+        "type": "Iframe Content",
+        "manual_intervention_required_for": [
+            "Interacting with embedded video players, social media feeds, etc."
+        ]
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "xpath_affected": "/html/body/iframe[4]",
+        "description": "Iframe detected (src: https://td.doubleclick.net/td/rul/851624024?random=1748433771461&cv=11&fst=1748433771461&fmt=3&bg=ffffff&guid=ON&async=1&gtm=45be55q0v883842592za200&gcd=13l3l3l3l1l1&dma=0&tag_exp=101509157~103116026~103130498~103130500~103200004~103233427~103252644~103252646~104481633~104481635&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.aetv.com%2F&hn=www.googleadservices.com&frm=0&tiba=A%26E%20%7C%20Watch%20Full%20Episodes%20of%20Your%20Favorite%20Shows&npa=0&us_privacy=error&pscdl=noapi&auid=53991723.1748433771&uaa=arm&uab=64&uafvl=Chromium%3B136.0.7103.25%7CHeadlessChrome%3B136.0.7103.25%7CNot.A%252FBrand%3B99.0.0.0&uamb=0&uam=&uap=macOS&uapv=14.7.6&uaw=0&fledge=1&data=event%3Dgtag.config). Content inside needs context switching and specific handling.",
+        "type": "Iframe Content",
+        "manual_intervention_required_for": [
+            "Interacting with embedded video players, social media feeds, etc."
+        ]
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "xpath_affected": "/html/body/iframe[5]",
+        "description": "Iframe detected (src: None). Content inside needs context switching and specific handling.",
+        "type": "Iframe Content",
+        "manual_intervention_required_for": [
+            "Interacting with embedded video players, social media feeds, etc."
+        ]
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "xpath_affected": "/html/body/iframe[6]",
+        "description": "Iframe detected (src: https://aetv.demdex.net/dest5.html?d_nsid=0#https%3A%2F%2Fwww.aetv.com). Content inside needs context switching and specific handling.",
+        "type": "Iframe Content",
+        "manual_intervention_required_for": [
+            "Interacting with embedded video players, social media feeds, etc."
+        ]
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "xpath_affected": "/html/body/iframe[7]",
+        "description": "Iframe detected (src: https://sp.auth.adobe.com/entitlement/v4/AccessEnablerProxy.html?9f61ce3349740cda7528#https%3A%2F%2Fwww.aetv.com%2F). Content inside needs context switching and specific handling.",
+        "type": "Iframe Content",
+        "manual_intervention_required_for": [
+            "Interacting with embedded video players, social media feeds, etc."
+        ]
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "xpath_affected": "/html/body/iframe[8]",
+        "description": "Iframe detected (src: https://www.google.com/recaptcha/api2/aframe). Content inside needs context switching and specific handling.",
+        "type": "Iframe Content",
+        "manual_intervention_required_for": [
+            "Interacting with embedded video players, social media feeds, etc."
+        ]
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "xpath_affected": "/html/iframe",
+        "description": "Iframe detected (src: https://securepubads.g.doubleclick.net/static/topics/topics_frame.html). Content inside needs context switching and specific handling.",
+        "type": "Iframe Content",
+        "manual_intervention_required_for": [
+            "Interacting with embedded video players, social media feeds, etc."
+        ]
+    }
+]

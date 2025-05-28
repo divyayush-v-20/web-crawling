@@ -1,0 +1,233 @@
+[
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "Shows",
+        "href": "/shows",
+        "xpath": "/html/body/section/header/ul/li/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "Videos",
+        "href": "/videos",
+        "xpath": "/html/body/section/header/ul/li[2]/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "Schedule",
+        "href": "/schedule",
+        "xpath": "/html/body/section/header/ul/li[3]/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "True Crime Blog",
+        "href": "/real-crime",
+        "xpath": "/html/body/section/header/ul/li[4]/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "Biography",
+        "href": "/biography",
+        "xpath": "/html/body/section/header/ul/li[5]/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "A&E Classics",
+        "href": "https://play.aetv.com/channel/crime-curated",
+        "xpath": "/html/body/section/header/div[4]/div/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "LIVE TV",
+        "href": "https://play.aetv.com/live",
+        "xpath": "/html/body/section/header/div[4]/div[2]/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "Visit",
+        "href": "#",
+        "xpath": "/html/body/section/header/div[4]/div[3]/div/div/ul/li/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "Sign Out",
+        "href": "#",
+        "xpath": "/html/body/section/header/div[4]/div[3]/div/div/ul/li[2]/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "Profile",
+        "href": "/profile/information",
+        "xpath": "/html/body/section/header/div[4]/div[3]/div[3]/div[2]/ul/li/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "Sign Out",
+        "href": "#",
+        "xpath": "/html/body/section/header/div[4]/div[3]/div[3]/div[2]/ul/li[2]/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "×",
+        "href": "javascript:void(0)",
+        "xpath": "/html/body/section/header/div[4]/div[4]/div/div/div/div/form/table/tbody/tr/td/div/table/tbody/tr/td[2]/div/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "Profile",
+        "href": "/profile/information",
+        "xpath": "/html/body/section/header/div[5]/div[2]/div/div[2]/ul/li/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "Sign Out",
+        "href": "#",
+        "xpath": "/html/body/section/header/div[5]/div[2]/div/div[2]/ul/li[2]/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "A&E",
+        "href": "/",
+        "xpath": "/html/body/section/header/div[5]/div[3]/div/div/strong/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "×",
+        "href": "javascript:void(0)",
+        "xpath": "/html/body/section/header/div[5]/div[3]/div/div/div/div/div/div/form/table/tbody/tr/td/div/table/tbody/tr/td[2]/div/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "Live TV",
+        "href": "https://play.aetv.com/live",
+        "xpath": "/html/body/section/header/div[5]/div[3]/div/ol/li/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "A&E Classics",
+        "href": "https://play.aetv.com/channel/crime-curated",
+        "xpath": "/html/body/section/header/div[5]/div[3]/div/ol/li[2]/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "Shows",
+        "href": "/shows",
+        "xpath": "/html/body/section/header/div[5]/div[3]/div/ol/li[3]/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "Videos",
+        "href": "/videos",
+        "xpath": "/html/body/section/header/div[5]/div[3]/div/ol/li[4]/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "Schedule",
+        "href": "/schedule",
+        "xpath": "/html/body/section/header/div[5]/div[3]/div/ol/li[5]/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "True Crime Blog",
+        "href": "/real-crime",
+        "xpath": "/html/body/section/header/div[5]/div[3]/div/ol/li[6]/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "Biography",
+        "href": "/biography",
+        "xpath": "/html/body/section/header/div[5]/div[3]/div/ol/li[7]/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "Indiefilms",
+        "href": "/indiefilms",
+        "xpath": "/html/body/section/header/div[5]/div[3]/div/ol/li[8]/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "A&E Crime Central",
+        "href": "https://www.aecrimecentral.com/?cmpid=CC_O_Site_AE_Menu",
+        "xpath": "/html/body/section/header/div[5]/div[3]/div/ol/li[9]/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "WWE on A&E",
+        "href": "/wwe",
+        "xpath": "/html/body/section/header/div[5]/div[3]/div/ol/li[10]/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "Home.Made.Nation",
+        "href": "https://www.aetv.com/home-made",
+        "xpath": "/html/body/section/header/div[5]/div[3]/div/ol/li[11]/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "Link A&E on facebook",
+        "href": "https://www.facebook.com/AETV",
+        "xpath": "/html/body/section/header/div[5]/div[3]/div/div[2]/ul/li/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "Link A&E on twitter",
+        "href": "https://x.com/aetv",
+        "xpath": "/html/body/section/header/div[5]/div[3]/div/div[2]/ul/li[2]/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "Link A&E on youtube",
+        "href": "https://www.youtube.com/AETV",
+        "xpath": "/html/body/section/header/div[5]/div[3]/div/div[2]/ul/li[3]/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "Link A&E on instagram",
+        "href": "https://instagram.com/AETV",
+        "xpath": "/html/body/section/header/div[5]/div[3]/div/div[2]/ul/li[4]/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "Link A&E on tiktok",
+        "href": "https://www.tiktok.com/@aetv",
+        "xpath": "/html/body/section/header/div[5]/div[3]/div/div[2]/ul/li[5]/a"
+    },
+    {
+        "url": "https://www.aetv.com/",
+        "element_type": "nav_link",
+        "text": "Email Me",
+        "href": "/emails/sign-up",
+        "xpath": "/html/body/section/header/div[5]/div[3]/div/div[2]/div/a"
+    }
+]

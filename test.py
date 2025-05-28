@@ -1,106 +1,101 @@
 import asyncio
-from playwright.async_api import async_playwright
-import html2text 
+from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, BrowserConfig # Import BrowserConfig
+from crawl4ai.extraction_strategy import JsonCssExtractionStrategy
+from playwright.async_api import Page
 
-async def scrape_html(url: str) -> str:
-    async with async_playwright() as p:
-        # Launch a Chromium browser instance
-        browser = await p.chromium.launch(headless=False, executable_path="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
-        # Create a new page in the browser
-        page = await browser.new_page()
+async def custom_interaction_and_scrape():
+    url = "https://aetv.com" # Replace with your target URL
+    # IMPORTANT: Replace with a real URL that has a "Show More" button and dynamic content
+    # For testing, you might need to create a simple local HTML file or find a public site.
+    
+    # Define a simple extraction schema for initial data
+    initial_schema = {
+        "name": "InitialData",
+        "baseSelector": "div.main-content", # Adjust if necessary for your target site
+        "fields": [
+            {"name": "title", "selector": "h1", "type": "text"},
+            {"name": "description", "selector": "p.intro", "type": "text"}
+        ]
+    }
 
+    all_extracted_data = {}
+
+    async def interact_and_extract_hook(page: Page, context):
+        """
+        This hook is executed after the page has been navigated to and loaded by Crawl4AI.
+        We can now use Playwright's 'page' object for direct interaction.
+        """
+        print(f"Hook: Interacting with page: {page.url}")
+        
+        # 1. Use Playwright to find and click the "Show More" button
         try:
-            # Navigate to the specified URL.
-            # 'domcontentloaded' waits until the initial HTML document has been completely loaded and parsed.
-            await page.goto(url, wait_until='domcontentloaded')
+            # Adjust the selector for your actual "Show More" button
+            show_more_button = await page.wait_for_selector(
+                "button.show-more", timeout=5000 
+            )
+            await show_more_button.click()
+            print("Hook: Clicked 'Show More' button.")
+            
+            # Wait for the dynamic content to load after the click
+            # Adjust the selector for the container of your dynamic content
+            await page.wait_for_selector("div.additional-details", timeout=10000)
+            print("Hook: Dynamic content loaded.")
 
-            # --- Attempt to dismiss cookie consent banners/overlays ---
-            # This section tries to find and click common "Accept" or "Continue" buttons
-            # within cookie consent pop-ups or overlays.
-            # It uses a list of common selectors for these buttons.
-            cookie_consent_selectors = [
-                'button:has-text("Accept")',
-                'button:has-text("Accept all")',
-                'button:has-text("Continue")',
-                'button:has-text("Got it")',
-                'button[id*="cookie"][class*="accept"]',
-                'button[class*="cookie"][class*="accept"]',
-                'a[id*="cookie"][class*="accept"]',
-                'a[class*="cookie"][class*="accept"]',
-                '.cookie-consent-button',
-                '.consent-button',
-                '#onetrust-accept-btn-handler', # Common for OneTrust
-                '#didomi-notice-agree-button',  # Common for Didomi
-                '.cc-btn.cc-allow',             # Common for CookieConsent
-                '.fc-button.fc-cta-consent'     # Common for Funding Choices
-            ]
+            # 2. Use Playwright to scrape the newly revealed content
+            dynamic_elements = await page.locator("div.additional-details .detail-item").all_text_contents()
+            contact_email_href = await page.locator("a.email-link").get_attribute("href")
 
-            print("Attempting to dismiss cookie consent banner (if present)...")
-            for selector in cookie_consent_selectors:
-                try:
-                    await page.locator(selector).wait_for(state='visible', timeout=5000)
-                    await page.click(selector)
-                    print(f"Clicked cookie consent button with selector: {selector}")
-                    await asyncio.sleep(2)
-                    break 
-                except Exception:
-                    pass
-            print("Finished attempting to dismiss cookie consent.")
-
-            raw_body_html = await page.inner_html('body')
-
-            return raw_body_html
+            all_extracted_data['dynamic_content'] = {
+                "extra_info": dynamic_elements,
+                "contact_email": contact_email_href
+            }
+            print(f"Hook: Scraped dynamic content: {all_extracted_data['dynamic_content']}")
 
         except Exception as e:
-            return f"Error scraping {url}: {e}"
-        finally:
-            await browser.close()
+            print(f"Hook: Error during interaction or dynamic scraping: {e}")
+            all_extracted_data['dynamic_content'] = "Failed to load dynamic content."
 
-# --- Main execution block ---
-async def main():
-    # === IMPORTANT: Replace this with the URL you want to scrape ===
-    # target_url = "https://fm99.lt/top-10"
-    # target_url = "https://www.example.com"
-    # target_url = "https://en.wikipedia.org/wiki/Web_scraping"
-    # target_url = "https://www.crunchyroll.com/videos/alphabetical"
-    # target_url = "https://www.aetv.com/shows"
-    # target_url = "https://www.crunchyroll.com/videos/alphabetical#L"
-    # target_url = "https://www.hotstar.com/in/home"
-    # target_url = "https://www.powerapp.com.tr/yayin-akisi/powerturktv/"
-    # target_url = "https://ktena.co.kr/skyUHD/?d=20250510"
-    target_url = "https://abc.com/browse/comedy"
+    # --- NEW HOOK REGISTRATION METHOD ---
+    # Create a BrowserConfig object and pass hooks to its 'hooks' dictionary
+    browser_config = BrowserConfig(
+        headless=True,  # Set to False during development to see the browser
+        verbose=True,
+        hooks={
+            "after_goto": [interact_and_extract_hook] # Register the hook here
+        }
+    )
 
-    print(f"Attempting to scrape raw HTML from: {target_url}\n")
-    raw_html_output = await scrape_html(target_url)
+    # Configure Crawl4AI's run settings
+    crawler_run_config = CrawlerRunConfig(
+        extraction_strategy=JsonCssExtractionStrategy(initial_schema),
+        cache_mode="bypass" # Ensure fresh content
+    )
 
-    # Check if scraping was successful
-    if raw_html_output.startswith("Error scraping"):
-        print(raw_html_output)
-        return
+    # Pass the browser_config to the AsyncWebCrawler constructor
+    async with AsyncWebCrawler(config=browser_config) as crawler:
+        print(f"Starting crawl for: {url}")
+        result = await crawler.arun(url=url, config=crawler_run_config)
 
-    print("Raw HTML scraped. Now converting to Markdown...\n")
+        if result.success:
+            print("\n--- Initial Crawl Result ---")
+            print(f"URL: {result.url}")
+            print(f"Status Code: {result.status_code}")
+            print("Extracted Initial Content:")
+            print(result.extracted_content)
 
-    # --- Convert raw HTML to Markdown using html2text ---
-    # Initialize the HTML2Text converter
-    h = html2text.HTML2Text()
+            print("\n--- Dynamic Content (from Playwright interaction) ---")
+            print(all_extracted_data.get('dynamic_content', 'No dynamic content extracted.'))
 
-    # Configure html2text for desired Markdown output
-    # These settings aim for a clean, readable Markdown representation.
-    h.ignore_links = False       # Keep links in the Markdown output
-    h.ignore_images = True       # Ignore images (useful for text-focused markdown)
-    h.body_width = 0             # Disable line wrapping (output will be one long line if no natural breaks)
-    h.single_line_break = True   # Treat single line breaks as spaces, not new paragraphs
-    h.unicode_snob = True        # Convert unicode characters to their closest ASCII equivalent
-    h.skip_internal_links = True # Do not convert internal page links (e.g., #section-id)
-    h.use_automatic_links = True # Use automatic links for URLs where possible
+            # You can combine results or process them further
+            final_data = {
+                "initial_scrape": result.extracted_content,
+                "dynamic_scrape": all_extracted_data.get('dynamic_content')
+            }
+            print("\n--- Combined Final Data ---")
+            print(final_data)
 
-    # Perform the conversion
-    markdown_content = h.handle(raw_html_output)
-
-    # Print the generated Markdown content
-    with open("results/abc_com_browse_comedy.md", "w") as f:
-        f.write(markdown_content)
+        else:
+            print(f"Crawl Failed: {result.error_message}")
 
 if __name__ == "__main__":
-    # Run the main asynchronous function
-    asyncio.run(main())
+    asyncio.run(custom_interaction_and_scrape())
