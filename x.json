@@ -1,0 +1,82 @@
+{
+    "status": true,
+    "message": "Live events",
+    "data": [
+        {
+            "ids": "0tuCvDesn2LM6Ad+INdcAA==:MTIzNDU2Nzg5MDEyMzQ1Ng==",
+            "id": 15202,
+            "contentId": null,
+            "owned_by": 0,
+            "title": "DECODE with Sudhir Chaudhary - 3rd June 2025",
+            "is_paid": 0,
+            "type": 9,
+            "media_type": 0,
+            "is_live": 0,
+            "live_date_time": 1748964600,
+            "live_end_time": 0,
+            "thumbnail": "https:\/\/prodcdn1.wavespb.com\/shows\/thumbnail\/12238202411000238630.webp",
+            "banner_icon": null,
+            "detail_banner": "https:\/\/prodcdn1.wavespb.com\/shows\/detail_banner\/18576396323.webp",
+            "poster_url": "https:\/\/prodcdn1.wavespb.com\/shows\/poster_url\/12238202411000238631.webp",
+            "description": [
+                {
+                    "content": "DECODE with Sudhir Chaudhary \u2014 Uncovering the truth, cutting through the noise, and delivering straight facts. Tune in Monday to Friday at 9 PM.",
+                    "language": "English"
+                }
+            ],
+            "released_on": null,
+            "still_live": 1,
+            "video_time": 0,
+            "file_url": "",
+            "is_drm_protected": 0,
+            "vdc_id": "4383970_1_9856808930101920",
+            "genres": "News",
+            "genres_id": "125",
+            "video_id": 39064680,
+            "certificate_name": "",
+            "language_title": "Hindi",
+            "tags": [],
+            "extra_json": null
+        },
+        {
+            "ids": "EkDSg4HJSO22Z\/OOmFoldw==:MTIzNDU2Nzg5MDEyMzQ1Ng==",
+            "id": 15216,
+            "contentId": null,
+            "owned_by": 0,
+            "title": "Aarti of Prabhu Shriram Lalla at Ram Mandir - 4th June 2025",
+            "is_paid": 0,
+            "type": 9,
+            "media_type": 0,
+            "is_live": 0,
+            "live_date_time": 1748997000,
+            "live_end_time": 0,
+            "thumbnail": "https:\/\/prodcdn1.wavespb.com\/shows\/thumbnail\/115795700114158255231000160242.webp",
+            "banner_icon": null,
+            "detail_banner": "https:\/\/prodcdn1.wavespb.com\/shows\/detail_banner\/115795700114158255231000160244.webp",
+            "poster_url": "https:\/\/prodcdn1.wavespb.com\/shows\/poster_url\/115795700114158255231000160243.webp",
+            "description": [
+                {
+                    "content": "Join us for a spiritually uplifting experience with our live streaming of the Ram Lalla Aarti, a cherished devotional ritual dedicated to Lord Ram and his divine child form, Ram Lalla. This enchanting Aarti is not just a prayer; it\u2019s a heartfelt expression of devotion that echoes through centuries, uniting millions of followers in faith and reverence.",
+                    "language": "English"
+                }
+            ],
+            "released_on": null,
+            "still_live": 1,
+            "video_time": 0,
+            "file_url": "",
+            "is_drm_protected": 0,
+            "vdc_id": "4215984_1_2912919905371008",
+            "genres": "Devotional",
+            "genres_id": "91",
+            "video_id": 39064705,
+            "certificate_name": "",
+            "language_title": "Hindi",
+            "tags": [],
+            "extra_json": null
+        }
+    ],
+    "error": "",
+    "statusCode": 200,
+    "messageCode": "193",
+    "cd_time": 1748943609
+}

@@ -47,6 +47,7 @@ async def scrape_html(url: str) -> str:
             # --- Attempt to dismiss cookie consent banners/overlays ---
             # Added Crunchyroll-specific cookie consent selectors for "Accept All Cookies" and "Reject All"
             cookie_consent_selectors = [
+                'button:has-text("English")',
                 'button:has-text("Accept All Cookies")', # Specific to Crunchyroll output
                 'button:has-text("Accept all")',
                 'button:has-text("Accept")',
@@ -143,16 +144,17 @@ async def main():
     # target_url = "https://en.wikipedia.org/wiki/Web_scraping"
     # target_url = "https://www.crunchyroll.com/videos/alphabetical"
     # target_url = "https://www.aetv.com/shows"
-    target_url = "https://www.crunchyroll.com/videos/alphabetical#L"
+    # target_url = "https://www.crunchyroll.com/videos/alphabetical#L"
     # target_url = "https://www.hotstar.com/in/home"
     # target_url = "https://www.powerapp.com.tr/yayin-akisi/powerturktv/"
     # target_url = "https://ktena.co.kr/skyUHD/?d=20250510"
     # target_url = "https://abc.com/browse/comedy"
     # target_url = "https://www.radiofreccia.it/palinsesto/giovedi/"
     # target_url = "https://programtv.onet.pl/program-tv/tvn-style-hd-141?dzien=0"
+    target_url = "https://wavespb.com"
 
     # file_name = "abc_com_browse_comedy"
-    file_name = "crunchyroll"
+    # file_name = "crunchyroll"
     # file_name = "powerapp"
     # file_name = "hotstar"
     # file_name = "skyuhd"
@@ -160,6 +162,7 @@ async def main():
     # file_name = "aetv"
     # file_name = "radiofreccia"
     # file_name = "programtv_onet"
+    file_name = "wavespb"
 
     print(f"Attempting to scrape raw HTML from: {target_url}\n")
     raw_html_output = await scrape_html(target_url)

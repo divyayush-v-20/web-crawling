@@ -1,0 +1,8 @@
+all the data is being loaded using POST requests
+
+on every navbar section click, we get new data
+
+data is being loaded using the following 2 APIs
+
+1. ajax_data_part
+2. getFlatListData
